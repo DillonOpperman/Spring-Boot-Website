@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Pigraid Java Edition!</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="icon" href="path_to_favicon.ico" type="image/x-icon">
+ 
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="path_to_logo.png" alt="Pigraid Logo" width="40" height="40">
+            </div>
+            <a href="https://linktr.ee/Officialpigraid?lt_utm_source=lt_share_link#423439376" id="linktree-link" target="_blank" rel="noopener noreferrer">
+                <button id="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i> Linktree
+                </button>
+            </a>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="nav-item1 active">Home</a></li>
+                <li><a href="about.html" class="nav-item2">About Us</a></li>
+                <li><a href="vote.html" class="nav-item3">Vote</a></li>
+                <li><a href="HistoryGallery.html" class="nav-item4">History Gallery</a></li>
+                <li><a href="contact.html" class="nav-item5">Contact</a></li>
+                <li><a href="shop.html" class="nav-item6">Shop</a></li>
+                <li><a href="staff-apply.html" class="nav-item7">Join Our Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1><span class="heart-icon"></span> Pigraid Java Edition</h1>
+            <p>Your Ultimate Minecraft Adventure Awaits</p>
+            <p>Welcome to our official website!</p>
+            <a href="#learn-more" class="cta-button">Learn More</a>
+            <div class="server-info">
+                <p>Join now: <strong>play.pigraid.com</strong></p>
+            </div>
+        </section>
+
+        <section id="learn-more" class="features">
+            <div class="feature-card">
+                <img class="lazyload" data-src="path_to_icon1.png" alt="Unique Gameplay Icon">
+                <h3><a href="about.html">Unique Gameplay</a></h3>
+                <p>Experience our custom game modes and plugins that make Pigraid stand out.</p>
+            </div>
+            <div class="feature-card">
+                <img class="lazyload" data-src="path_to_icon2.png" alt="Active Community Icon">
+                <h3><a href="contact.html">Active Community</a></h3>
+                <p>Join our friendly and active community of Minecraft enthusiasts.</p>
+            </div>
+            <div class="feature-card">
+                <img class="lazyload" data-src="path_to_icon3.png" alt="Regular Events Icon">
+                <h3><a href="vote.html">Regular Events</a></h3>
+                <p>Participate in exciting events and competitions with amazing prizes.</p>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Players Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Pigraid has the best community I've ever been a part of. The staff is always helpful and the events are super fun!"</p>
+                </div>
+                <div class="testimonial">
+                    <p>"I've been playing on Pigraid for over a year now, and it just keeps getting better. The custom plugins are amazing!"</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Found Pigraid through a friend and haven't looked back since. Great server with awesome gameplay!"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>Have Questions or Feedback?</h2>
+                <p>We'd love to hear from you! Contact us through our contact form.</p>
+                <a href="contact.html" class="cta-button">Contact Us</a>
+            </div>
+        </section>
+
+        <section class="newsletter">
+    		<div class="newsletter-container">
+        		<h2>Stay Updated</h2>
+        		<p>Subscribe to our newsletter for the latest news and events!</p>
+        			<form id="newsletter-form" action="/subscribe" method="post">
+            			<input type="email" name="email" id="subscriber-email" placeholder="Enter your email" required>
+            			<button type="submit" id="submit-btn">Subscribe</button>
+        			</form>
+        <div id="subscription-status" class="mt-2" style="display: none;">
+            <!-- Status messages will be displayed here -->
+        </div>
+        <p class="mt-2">
+            <a href="subscribe.html">Having trouble? Visit our subscription page.</a>
+        </p>
+    </div>
+</section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="vote.html">Vote</a></li>
+                    <li><a href="HistoryGallery.html">History Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="staff-apply.html">Join Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: info@pigraid.com</li>
+                    <li>Discord: <a href="https://discord.gg/nWAakW5F">Join our server</a></li>
+                    <li>Twitter: <a href="https://twitter.com/officialpigraid">@PigraidMC</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://discord.gg/nWAakW5F" aria-label="Join our Discord" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
+                    <a href="https://twitter.com/officialpigraid" aria-label="Follow us on Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@officialpigraid" aria-label="Subscribe to our YouTube channel" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/pigraidpvp?igsh=MjN2dmtldXlueDZh" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@officialpigraid" aria-label="Follow us on TikTok" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Pigraid Java Edition. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for handling the newsletter form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsletterForm = document.getElementById('newsletter-form');
+            const statusDiv = document.getElementById('subscription-status');
+            
+            // Check for subscription success parameter in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('subscribed') && urlParams.get('subscribed') === 'true') {
+                statusDiv.style.display = 'block';
+                statusDiv.innerHTML = '<p style="color: green;">Thank you for subscribing! You\'ll receive updates soon.</p>';
+                
+                // Hide the message after 5 seconds
+                setTimeout(function() {
+                    statusDiv.style.display = 'none';
+                    
+                    // Remove the parameter from URL without refreshing page
+                    const url = new URL(window.location);
+                    url.searchParams.delete('subscribed');
+                    window.history.replaceState({}, '', url);
+                }, 5000);
+            }
+            
+            // Mobile menu toggle functionality
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pigraid Staff Applications</title>
+    <style>
+        :root {
+            --primary-color: #b68d67;
+            --primary-color-dark: #967354;
+            --secondary-color: #f0e6d9;
+            --light-text-color: #fff;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Stars Animation */
+        .stars-container {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-size: contain;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .star1 { top: 20%; left: 15%; animation-delay: 0s; }
+        .star2 { top: 50%; left: 40%; animation-delay: 0.8s; }
+        .star3 { top: 30%; left: 70%; animation-delay: 0.4s; }
+        .star4 { top: 15%; left: 85%; animation-delay: 1.2s; }
+        .star5 { top: 65%; left: 25%; animation-delay: 1.6s; }
+        .star6 { top: 75%; left: 60%; animation-delay: 2s; }
+
+        .star {
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+        }
+
+        @keyframes glow {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.3; transform: scale(0.8); }
+        }
+
+        /* Ribbon Styles */
+        .ribbon {
+            position: fixed;
+            left: -100px;
+            top: 50px;
+            width: 300px;
+            height: 45px;
+            background-color: var(--primary-color);
+            transform: rotate(-45deg);
+            color: white;
+            text-align: center;
+            line-height: 45px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .ribbon:hover {
+            background-color: var(--primary-color-dark);
+        }
+
+        /* Role Menu Styles */
+        .role-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            transition: left 0.3s ease;
+            z-index: 1001;
+            overflow-y: auto;
+            padding-top: 60px;
+        }
+
+        .role-menu.active {
+            left: 0;
+        }
+
+        .role-option {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .role-option:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .role-description {
+            padding: 20px;
+            display: none;
+            background-color: white;
+        }
+
+        .role-description.active {
+            display: block;
+        }
+
+        .apply-button {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .apply-button:hover {
+            background-color: var(--primary-color-dark);
+        }
+
+        .application-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1002;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .application-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars Background -->
+    <div class="stars-container">
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+        <div class="star star4"></div>
+        <div class="star star5"></div>
+        <div class="star star6"></div>
+    </div>
+
+    <!-- Ribbon -->
+    <div class="ribbon" onclick="toggleMenu()">Needs</div>
+
+    <!-- Role Menu -->
+    <div class="role-menu" id="roleMenu">
+        <div class="role-option" onclick="showRole('developer')">Developer</div>
+        <div class="role-description" id="developer-description">
+            <h3>Developer Responsibilities:</h3>
+            <ul>
+                <li>Create and maintain server plugins</li>
+                <li>Debug and optimize server performance</li>
+                <li>Implement new features and gameplay mechanics</li>
+                <li>Collaborate with other staff members on technical projects</li>
+            </ul>
+            <button class="apply-button" onclick="showApplication('Developer')">Apply for Developer</button>
+        </div>
+
+        <div class="role-option" onclick="showRole('moderator')">Moderator</div>
+        <div class="role-description" id="moderator-description">
+            <h3>Moderator Responsibilities:</h3>
+            <ul>
+                <li>Enforce server rules and guidelines</li>
+                <li>Handle player reports and conflicts</li>
+                <li>Assist players with questions and issues</li>
+                <li>Monitor chat and maintain a positive community environment</li>
+            </ul>
+            <button class="apply-button" onclick="showApplication('Moderator')">Apply for Moderator</button>
+        </div>
+
+        <div class="role-option" onclick="showRole('builder')">Builder</div>
+        <div class="role-description" id="builder-description">
+            <h3>Builder Responsibilities:</h3>
+            <ul>
+                <li>Create high-quality builds for the server</li>
+                <li>Participate in building events and projects</li>
+                <li>Collaborate with other builders on large-scale projects</li>
+                <li>Help maintain and improve server aesthetics</li>
+            </ul>
+            <button class="apply-button" onclick="showApplication('Builder')">Apply for Builder</button>
+        </div>
+    </div>
+
+    <div class="application-container" id="applicationForm">
+        <div class="application-form">
+            <button class="close-button" onclick="closeApplication()">×</button>
+            <h2>Staff Application - <span id="roleTitle"></span></h2>
+            <form action="/applyform" method="post">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="minecraft-username">Minecraft Username</label>
+                    <input type="text" id="minecraft-username" name="minecraft" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" required min="13">
+                </div>
+                <div class="form-group">
+                    <label for="discord">Discord Username</label>
+                    <input type="text" id="discord" name="discord" required>
+                </div>
+                <input type="hidden" id="role" name="role" value="">
+                <div class="form-group">
+                    <label for="message">Application Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="apply-button">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('roleMenu').classList.toggle('active');
+        }
+
+        function showRole(role) {
+            // Hide all descriptions
+            document.querySelectorAll('.role-description').forEach(desc => {
+                desc.classList.remove('active');
+            });
+            // Show selected role description
+            document.getElementById(role + '-description').classList.add('active');
+        }
+
+        function showApplication(role) {
+            document.getElementById('roleTitle').textContent = role;
+            document.getElementById('role').value = role;
+            document.getElementById('applicationForm').style.display = 'flex';
+        }
+
+        function closeApplication() {
+            document.getElementById('applicationForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
