@@ -1451,6 +1451,37 @@ p {
   }
 }
 
+/* CTA Section Styles */
+.cta-section {
+  background-color: var(--light-text-color);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.cta-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta-container h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cta-container p {
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
 /* Enhanced Hero Section */
 .hero {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
