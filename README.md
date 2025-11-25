@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Pigraid - Spring Boot Web Application
 
 A Spring Boot web application featuring a modern website with voting functionality, contact forms, and staff application system.
@@ -192,8 +192,6 @@ This project uses environment variables for sensitive configuration:
 - `application-local.properties`
 - Any files containing passwords or API keys
 
----
 
-=======
 # Spring-Boot-Website
->>>>>>> 3bc519b9ed7c4b4e491dbd4bfa80a8d3ed2dfb4b
+
